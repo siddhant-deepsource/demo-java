@@ -23,16 +23,16 @@ public class Server extends HttpServlet {
         Boolean b = Boolean.parseBoolean(req.getParameter("winCondition"));
         int ticketNumber = Integer.parseInt(req.getParameter("ticket"));
         try {
-            Statement s = conn.createStatement();
+            Statement s=conn.createStatement();
             s.execute("SELECT userName, isWin FROM users WHERE uid = " + ticketNumber + ";");
             ResultSet r = s.getResultSet();
 
-            if (r.getBoolean("isWin") && b) {
+            if (r.getBoolean("isWin")&& b   ) {
                 resp.getWriter().write("You win, " + r.getString("userName"));
             } else {
                 resp.getWriter().write("You lose, " + r.getString("userName"));
             }
-        } catch (SQLException throwables) {
+        } catch(SQLException throwables) {
             throwables.printStackTrace();
         }
         resp.setStatus(200);
@@ -40,7 +40,7 @@ public class Server extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        super.doPost(req, resp);
+        super.doPost(    req, resp);
     }
 
     @Override
