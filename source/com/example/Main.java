@@ -1,7 +1,6 @@
 package com.example;
 
 import com.example.api.APIQueryHandler;
-import com.example.api.UrlRequest;
 import com.example.data.ConfigData;
 import java.io.BufferedReader;
 import java.io.File;
@@ -57,10 +56,6 @@ public class Main {
     } catch (Throwable ignored) {
       ignored.printStackTrace();
     }
-    
-    
-    
-    
 
     configReader.close();
     String config = configBuf.toString();
