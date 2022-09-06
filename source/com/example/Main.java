@@ -57,6 +57,10 @@ public class Main {
     } catch (Throwable ignored) {
       ignored.printStackTrace();
     }
+    
+    
+    
+    
 
     configReader.close();
     String config = configBuf.toString();
